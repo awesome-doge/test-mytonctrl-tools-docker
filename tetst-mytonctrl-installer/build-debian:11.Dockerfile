@@ -9,5 +9,5 @@ RUN apt-get install wget sudo -y
 RUN apt-get install --reinstall systemd -y
 
 RUN wget https://raw.githubusercontent.com/awesome-doge/mytonctrl/ninja/scripts/toninstaller.sh
-RUN cat  toninstaller.sh
+
 RUN sudo bash toninstaller.sh

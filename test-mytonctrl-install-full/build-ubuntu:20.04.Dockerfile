@@ -14,6 +14,7 @@ RUN apt-get install --reinstall systemd -y
 
 
 
-RUN wget https://raw.githubusercontent.com/awesome-doge/mytonctrl/ninja/scripts/toninstaller.sh
+RUN  wget https://raw.githubusercontent.com/ton-blockchain/mytonctrl/master/scripts/install.sh
 
-RUN sudo bash toninstaller.sh
+
+RUN bash install.sh -m full
