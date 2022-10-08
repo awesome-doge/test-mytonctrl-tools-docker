@@ -1,3 +1,5 @@
+cd tetst-mytonctrl-installer
+
 sudo docker build -t toninstaller:debian10 -f build-debian:10.Dockerfile  . --no-cache
 sudo docker build -t toninstaller:debian11 -f build-debian:11.Dockerfile  . --no-cache
 sudo docker build -t toninstaller:ubuntu18.04 -f build-ubuntu:18.04.Dockerfile  . --no-cache
