@@ -6,6 +6,7 @@ sudo docker build -t test-all-install-lite:ubuntu18.04 -f build-ubuntu:18.04.Doc
 sudo docker build -t test-all-install-lite:ubuntu20.04 -f build-ubuntu:20.04.Dockerfile  . --no-cache
 sudo docker build -t test-all-install-lite:ubuntu22.04 -f build-ubuntu:22.04.Dockerfile . --no-cache 
 sudo docker build -t test-all-install-lite:centos7.9.2009 -f build-centos:centos7.9.2009.Dockerfile  . --no-cache
+sudo docker build -t test-all-install-lite:centos8.4.2105 -f build-centos:centos8.4.2105.Dockerfile  . --no-cache
 sudo docker build -t test-all-install-lite:archlinuxbase -f build-archlinux:base.Dockerfile  . --no-cache
 
 # sudo docker build -t test-all-install-lite:ubuntu16.04 -f build-ubuntu:16.04.Dockerfile  . --no-cache
