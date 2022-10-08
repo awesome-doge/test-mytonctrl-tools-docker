@@ -5,3 +5,7 @@ sudo docker build -t toninstaller:ubuntu20.04 -f build-ubuntu:20.04.Dockerfile  
 sudo docker build -t toninstaller:ubuntu22.04 -f build-ubuntu:22.04.Dockerfile . --no-cache 
 sudo docker build -t toninstaller:centos7.9.2009 -f build-centos:centos7.9.2009.Dockerfile  . --no-cache
 sudo docker build -t toninstaller:archlinuxbase -f build-archlinux:base.Dockerfile  . --no-cache
+
+# sudo docker build -t toninstaller:ubuntu16.04 -f build-ubuntu16.04.Dockerfile  . --no-cache
+# sudo docker build -t toninstaller:debian8 -f build-debian:8.Dockerfile  . --no-cache
+# sudo docker build -t toninstaller:debian9 -f build-debian:9.Dockerfile  . --no-cache
