@@ -5,6 +5,3 @@ sudo docker build -t toninstaller:ubuntu20.04 -f build-ubuntu:20.04.Dockerfile  
 sudo docker build -t toninstaller:ubuntu22.04 -f build-ubuntu:22.04.Dockerfile . --no-cache 
 sudo docker build -t toninstaller:centos7.9.2009 -f build-centos:centos7.9.2009.Dockerfile  . --no-cache
 sudo docker build -t toninstaller:archlinuxbase -f build-archlinux:base.Dockerfile  . --no-cache
-
-# sudo docker build -t toninstaller:osxmonterey -f build-osxmonterey.Dockerfile  . --no-cache
-# docker pull sickcodes/docker-osx:monterey
