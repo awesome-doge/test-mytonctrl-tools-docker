@@ -1,4 +1,4 @@
-cd tetst-mytonctrl-installer
+cd test-mytonctrl-installer
 
 sudo docker build -t toninstaller:debian10 -f build-debian:10.Dockerfile  . --no-cache
 sudo docker build -t toninstaller:debian11 -f build-debian:11.Dockerfile  . --no-cache
@@ -12,3 +12,6 @@ sudo docker build -t toninstaller:archlinuxbase -f build-archlinux:base.Dockerfi
 # sudo docker build -t toninstaller:ubuntu16.04 -f build-ubuntu:16.04.Dockerfile  . --no-cache
 # sudo docker build -t toninstaller:debian8 -f build-debian:8.Dockerfile  . --no-cache
 # sudo docker build -t toninstaller:debian9 -f build-debian:9.Dockerfile  . --no-cache
+
+
+
