@@ -13,7 +13,7 @@ Test installation in different environments, including centos, debian, ubuntu...
 | debian:11              |   ✅    |
 | debian:12              |    x    |
 | archlinux:base         |   ✅    |
-| centos:centos7.9.2009  |   ✅    |
+| centos:centos7.9.2009  |   x    |
 | centos:centos8.4.2105  |   ✅    |
 
 
@@ -41,6 +41,7 @@ cd test-all-install-full
 sudo docker build -t test-mytonctrl-install-full:ubuntu18.04 -f build-ubuntu:18.04.Dockerfile  . 
 sudo docker build -t test-mytonctrl-install-full:ubuntu20.04 -f build-ubuntu:20.04.Dockerfile  . 
 sudo docker build -t test-mytonctrl-install-full:ubuntu22.04 -f build-ubuntu:22.04.Dockerfile .  
+sudo docker build -t test-mytonctrl-install-full:ubuntu23.10 -f build-ubuntu:23.10.Dockerfile .  
 
 sudo docker build -t test-mytonctrl-install-full:debian8 -f build-debian:8.Dockerfile  . 
 sudo docker build -t test-mytonctrl-install-full:debian9 -f build-debian:9.Dockerfile  . 
@@ -58,7 +59,7 @@ sudo docker build -t test-mytonctrl-install-full:centos8.4.2105 -f build-centos:
 2023 11 30
 
 
-test-all-install-full:ubuntu18.04
+ubuntu18.04
 ```
 147.5 Collecting psutil
 148.4   Downloading https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz (496kB)
@@ -74,15 +75,44 @@ test-all-install-full:ubuntu18.04
 149.3     ----------------------------------------
 149.3 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-e_y6vxsb/fastcrc/
 ```
-test-all-install-full:ubuntu20.04
+ubuntu20.04
 ```
 pass
 ```
-test-all-install-full:ubuntu22.04
+ubuntu22.04
 ```
 pass
 ```
-test-all-install-full:debian8
+ubuntu23.10
+```
+(Reading database ... 28652 files and directories currently installed.)
+131.4 Preparing to unpack .../ninja-build_1.11.1-2_arm64.deb ...
+131.4 Unpacking ninja-build (1.11.1-2) ...
+131.4 Setting up ninja-build (1.11.1-2) ...
+131.6 error: externally-managed-environment
+131.6
+131.6 × This environment is externally managed
+131.6 ╰─> To install Python packages system-wide, try apt install
+131.6     python3-xyz, where xyz is the package you are trying to
+131.6     install.
+131.6
+131.6     If you wish to install a non-Debian-packaged Python package,
+131.6     create a virtual environment using python3 -m venv path/to/venv.
+131.6     Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+131.6     sure you have python3-full installed.
+131.6
+131.6     If you wish to install a non-Debian packaged Python application,
+131.6     it may be easiest to use pipx install xyz, which will manage a
+131.6     virtual environment for you. Make sure you have pipx installed.
+131.6
+131.6     See /usr/share/doc/python3.11/README.venv for more information.
+131.6
+131.6 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+131.6 hint: See PEP 668 for the detailed specification.
+------
+```
+
+debian8
 ```
  > [2/6] RUN apt-get update:
 4.149 Ign http://security.debian.org jessie/updates InRelease
@@ -116,7 +146,7 @@ test-all-install-full:debian8
 9.998
 9.998 E: Some index files failed to download. They have been ignored, or old ones used instead.
 ```
-test-all-install-full:debian9
+debian9
 ```
  > [2/6] RUN apt-get update:
 0.183 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
@@ -173,18 +203,18 @@ test-all-install-full:debian9
 6.407 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-arm64/Packages  404  Not Found
 6.407 E: Some index files failed to download. They have been ignored, or old ones used instead.
 ```
-test-all-install-full:debian10
+debian10
 ```
 53.64               ********************************************************************************
 53.64               Requirements should be satisfied by a PEP 517 installer.
 53.64               If you are using pip, you can try `pip install --use-pep517`.
 53.64               ********************************************************************************
 ```
-test-all-install-full:debian11
+debian11
 ```
 pass
 ```
-test-all-install-full:debian12
+debian12
 ```
 27.20 Setting up ninja-build (1.11.1-1) ...
 27.34 error: externally-managed-environment
@@ -208,4 +238,20 @@ test-all-install-full:debian12
 27.34 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
 27.34 hint: See PEP 668 for the detailed specification.
 ```
-
+centos:centos7.9.2009
+```
+309.9 WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
+310.0 Collecting psutil
+311.0   Downloading https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz (496kB)
+311.5 Collecting fastcrc
+311.9   Downloading https://files.pythonhosted.org/packages/5c/65/f8a9f8ab2624142f1b1d34edb9fed3c147e435f06dd33eda905a62200b2b/fastcrc-0.2.1.tar.gz
+312.0     Complete output from command python setup.py egg_info:
+312.0     Traceback (most recent call last):
+312.0       File "<string>", line 1, in <module>
+312.0       File "/tmp/pip-build-6zeoq51w/fastcrc/setup.py", line 4, in <module>
+312.0         from setuptools_rust import Binding, RustExtension
+312.0     ModuleNotFoundError: No module named 'setuptools_rust'
+312.0
+312.0     ----------------------------------------
+312.0 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-6zeoq51w/fastcrc/
+```
