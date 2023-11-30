@@ -12,9 +12,7 @@ Test installation in different environments, including centos, debian, ubuntu...
 | debian:10              |    x    |
 | debian:11              |   ✅    |
 | debian:12              |    x    |
-| archlinux:base         |   ✅    |
 | centos:centos7.9.2009  |   x    |
-| centos:centos8.4.2105  |   ✅    |
 
 
 ```
@@ -29,9 +27,9 @@ docker pull ubuntu20.04
 docker pull ubuntu22.04
 
 docker pull centos:centos7.9.2009
-docker pull centos:centos8.4.2105
+# docker pull centos:centos8.4.2105
 
-docker pull archlinux:base
+# docker pull archlinux:base
 ```
 
 
