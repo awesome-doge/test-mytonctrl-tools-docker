@@ -7,6 +7,7 @@ Test installation in different environments, including centos, debian, ubuntu...
 | ubuntu:18.04           |    x    |
 | ubuntu:20.04           |   ✅    |
 | ubuntu:22.04           |   ✅    |
+| ubuntu:23.10           |    x    |
 | debian:8               |    x    |
 | debian:9               |    x    |
 | debian:10              |    x    |
@@ -25,6 +26,7 @@ docker pull debian:12
 docker pull ubuntu18.04
 docker pull ubuntu20.04
 docker pull ubuntu22.04
+docker pull ubuntu23.10
 
 docker pull centos:centos7.9.2009
 # docker pull centos:centos8.4.2105
