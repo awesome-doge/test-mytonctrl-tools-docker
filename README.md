@@ -5,12 +5,12 @@ Test installation in different environments, including centos, debian, ubuntu...
 | ---------------------- |:-------:|
 | ubuntu:16.04           |    x    |
 | ubuntu:18.04           |    x    |
-| ubuntu:20.04           |    x    |
-| ubuntu:22.04           |    x    |
+| ubuntu:20.04           |   ✅    |
+| ubuntu:22.04           |   ✅    |
 | debian:8               |    x    |
 | debian:9               |    x    |
 | debian:10              |    x    |
-| debian:11              |    x    |
+| debian:11              |   ✅    |
 | debian:12              |    x    |
 | archlinux:base         |   ✅    |
 | centos:centos7.9.2009  |   ✅    |
@@ -34,178 +34,178 @@ docker pull centos:centos8.4.2105
 docker pull archlinux:base
 ```
 
-```
-cd test-mytonctrl-installer
-
-sudo docker build -t toninstaller:ubuntu18.04 -f build-ubuntu:18.04.Dockerfile  . 
-sudo docker build -t toninstaller:ubuntu20.04 -f build-ubuntu:20.04.Dockerfile  . 
-sudo docker build -t toninstaller:ubuntu22.04 -f build-ubuntu:22.04.Dockerfile .  
-
-sudo docker build -t toninstaller:debian8 -f build-debian:8.Dockerfile  . 
-sudo docker build -t toninstaller:debian9 -f build-debian:9.Dockerfile  . 
-sudo docker build -t toninstaller:debian10 -f build-debian:10.Dockerfile  . 
-sudo docker build -t toninstaller:debian11 -f build-debian:11.Dockerfile  . 
-sudo docker build -t toninstaller:debian12 -f build-debian:12.Dockerfile  . 
-
-sudo docker build -t toninstaller:archlinuxbase -f build-archlinux:base.Dockerfile  . 
-
-sudo docker build -t toninstaller:centos7.9.2009 -f build-centos:centos7.9.2009.Dockerfile  . 
-sudo docker build -t toninstaller:centos8.4.2105 -f build-centos:centos8.4.2105.Dockerfile  . 
-```
 
 ```
-sudo bash test-all-toninstaller.sh
+cd test-all-install-full
 
-sudo bash test-all-install-full.sh
+sudo docker build -t test-mytonctrl-install-full:ubuntu18.04 -f build-ubuntu:18.04.Dockerfile  . 
+sudo docker build -t test-mytonctrl-install-full:ubuntu20.04 -f build-ubuntu:20.04.Dockerfile  . 
+sudo docker build -t test-mytonctrl-install-full:ubuntu22.04 -f build-ubuntu:22.04.Dockerfile .  
 
-sudo bash test-all-install-lite.sh
-```
+sudo docker build -t test-mytonctrl-install-full:debian8 -f build-debian:8.Dockerfile  . 
+sudo docker build -t test-mytonctrl-install-full:debian9 -f build-debian:9.Dockerfile  . 
+sudo docker build -t test-mytonctrl-install-full:debian10 -f build-debian:10.Dockerfile  . 
+sudo docker build -t test-mytonctrl-install-full:debian11 -f build-debian:11.Dockerfile  . 
+sudo docker build -t test-mytonctrl-install-full:debian12 -f build-debian:12.Dockerfile  . 
 
+sudo docker build -t test-mytonctrl-install-full:archlinuxbase -f build-archlinux:base.Dockerfile  . 
 
-toninstaller:debian10
-```
-164.0 CMake Error at /usr/share/cmake-3.13/Modules/FindPackageHandleStandardArgs.cmake:137 (message):
-164.0   Could NOT find Secp256k1 (missing: SECP256K1_INCLUDE_DIR SECP256K1_LIBRARY)
-164.0 Call Stack (most recent call first):
-164.0   /usr/share/cmake-3.13/Modules/FindPackageHandleStandardArgs.cmake:378 (_FPHSA_FAILURE_MESSAGE)
-164.0   CMake/FindSecp256k1.cmake:28 (find_package_handle_standard_args)
-164.0   crypto/CMakeLists.txt:322 (find_package)
-164.0
-164.0
-164.0 -- Configuring incomplete, errors occurred!
-164.0 See also "/usr/bin/ton/CMakeFiles/CMakeOutput.log".
-164.0 See also "/usr/bin/ton/CMakeFiles/CMakeError.log".
+sudo docker build -t test-mytonctrl-install-full:centos7.9.2009 -f build-centos:centos7.9.2009.Dockerfile  . 
+sudo docker build -t test-mytonctrl-install-full:centos8.4.2105 -f build-centos:centos8.4.2105.Dockerfile  . 
 ```
 
-
-toninstaller:debian11
-```
-97.67 CMake Error at /usr/share/cmake-3.18/Modules/FindPackageHandleStandardArgs.cmake:165 (message):
-97.67   Could NOT find Secp256k1 (missing: SECP256K1_INCLUDE_DIR SECP256K1_LIBRARY)
-97.67 Call Stack (most recent call first):
-97.67   /usr/share/cmake-3.18/Modules/FindPackageHandleStandardArgs.cmake:458 (_FPHSA_FAILURE_MESSAGE)
-97.67   CMake/FindSecp256k1.cmake:28 (find_package_handle_standard_args)
-97.67   crypto/CMakeLists.txt:322 (find_package)
-97.67
-97.67
-97.67 -- Configuring incomplete, errors occurred!
-97.67 See also "/usr/bin/ton/CMakeFiles/CMakeOutput.log".
-97.67 See also "/usr/bin/ton/CMakeFiles/CMakeError.log".
-```
-
-toninstaller:debian12
-```
-28.29 Reading package lists...
-28.58 Building dependency tree...
-28.66 Reading state information...
-28.77 The following NEW packages will be installed:
-28.77   ninja-build
-28.88 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-28.88 Need to get 127 kB of archives.
-28.88 After this operation, 447 kB of additional disk space will be used.
-28.88 Get:1 http://deb.debian.org/debian bookworm/main arm64 ninja-build arm64 1.11.1-1 [127 kB]
-29.06 debconf: delaying package configuration, since apt-utils is not installed
-29.08 Fetched 127 kB in 0s (678 kB/s)
-29.09 Selecting previously unselected package ninja-build.
-(Reading database ... 29729 files and directories currently installed.)
-29.10 Preparing to unpack .../ninja-build_1.11.1-1_arm64.deb ...
-29.10 Unpacking ninja-build (1.11.1-1) ...
-29.12 Setting up ninja-build (1.11.1-1) ...
-29.26 error: externally-managed-environment
-29.26
-29.26 × This environment is externally managed
-29.26 ╰─> To install Python packages system-wide, try apt install
-29.26     python3-xyz, where xyz is the package you are trying to
-29.26     install.
-29.26
-29.26     If you wish to install a non-Debian-packaged Python package,
-29.26     create a virtual environment using python3 -m venv path/to/venv.
-29.26     Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
-29.26     sure you have python3-full installed.
-29.26
-29.26     If you wish to install a non-Debian packaged Python application,
-29.26     it may be easiest to use pipx install xyz, which will manage a
-29.26     virtual environment for you. Make sure you have pipx installed.
-29.26
-29.26     See /usr/share/doc/python3.11/README.venv for more information.
-29.26
-29.26 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
-29.26 hint: See PEP 668 for the detailed specification.
-```
+## test-all-install-full
+2023 11 30
 
 
-toninstaller:ubuntu18.04
+test-all-install-full:ubuntu18.04
 ```
-259.0 Add rocksdb
-259.0 CMake Error: Could not find cmake module file: CMakeDetermineHOMEPAGE_URLCompiler.cmake
-259.0 CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
-259.0 Missing variable is:
-259.0 CMAKE_HOMEPAGE_URL_COMPILER_ENV_VAR
-259.0 CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
-259.0 Missing variable is:
-259.0 CMAKE_HOMEPAGE_URL_COMPILER
-259.0 CMake Error: Could not find cmake module file: /usr/bin/ton/CMakeFiles/3.10.2/CMakeHOMEPAGE_URLCompiler.cmake
-259.0 CMake Error: Could not find cmake module file: CMakeDeterminehttps://rocksdb.org/Compiler.cmake
-259.0 CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
-259.0 Missing variable is:
-259.0 CMAKE_https://rocksdb.org/_COMPILER_ENV_VAR
-259.0 CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
-259.0 Missing variable is:
-259.0 CMAKE_https://rocksdb.org/_COMPILER
-259.0 CMake Error: Could not find cmake module file: /usr/bin/ton/CMakeFiles/3.10.2/CMakehttps://rocksdb.org/Compiler.cmake
-259.0 -- The ASM compiler identification is Clang
-259.0 -- Found assembler: /usr/bin/clang
-259.0 CMake Error at third-party/rocksdb/CMakeLists.txt:41 (project):
-259.0   No CMAKE_HOMEPAGE_URL_COMPILER could be found.
-259.0
-259.0   Tell CMake where to find the compiler by setting the CMake cache entry
-259.0   CMAKE_HOMEPAGE_URL_COMPILER to the full path to the compiler, or to the
-259.0   compiler name if it is in the PATH.
-259.0
-259.0
-259.0 CMake Error: Could not find cmake module file: CMakeHOMEPAGE_URLInformation.cmake
-259.0 CMake Error at third-party/rocksdb/CMakeLists.txt:41 (project):
-259.0   No CMAKE_https://rocksdb.org/_COMPILER could be found.
-259.0
-259.0   Tell CMake where to find the compiler by setting the CMake cache entry
-259.0   CMAKE_https://rocksdb.org/_COMPILER to the full path to the compiler, or to
-259.0   the compiler name if it is in the PATH.
-259.0
-259.0
-259.0 CMake Error: Could not find cmake module file: CMakehttps://rocksdb.org/Information.cmake
-259.0 CMake Error: CMAKE_HOMEPAGE_URL_COMPILER not set, after EnableLanguage
-259.0 CMake Error: CMAKE_https://rocksdb.org/_COMPILER not set, after EnableLanguage
-259.0 -- Configuring incomplete, errors occurred!
-259.0 See also "/usr/bin/ton/CMakeFiles/CMakeOutput.log".
-259.0 See also "/usr/bin/ton/CMakeFiles/CMakeError.log".
+147.5 Collecting psutil
+148.4   Downloading https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz (496kB)
+148.9 Collecting fastcrc
+149.2   Downloading https://files.pythonhosted.org/packages/5c/65/f8a9f8ab2624142f1b1d34edb9fed3c147e435f06dd33eda905a62200b2b/fastcrc-0.2.1.tar.gz
+149.3     Complete output from command python setup.py egg_info:
+149.3     Traceback (most recent call last):
+149.3       File "<string>", line 1, in <module>
+149.3       File "/tmp/pip-build-e_y6vxsb/fastcrc/setup.py", line 4, in <module>
+149.3         from setuptools_rust import Binding, RustExtension
+149.3     ModuleNotFoundError: No module named 'setuptools_rust'
+149.3
+149.3     ----------------------------------------
+149.3 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-e_y6vxsb/fastcrc/
+```
+test-all-install-full:ubuntu20.04
+```
+pass
+```
+test-all-install-full:ubuntu22.04
+```
+pass
+```
+test-all-install-full:debian8
+```
+ > [2/6] RUN apt-get update:
+4.149 Ign http://security.debian.org jessie/updates InRelease
+4.412 Ign http://deb.debian.org jessie InRelease
+4.451 Ign http://security.debian.org jessie/updates Release.gpg
+4.467 Ign http://deb.debian.org jessie-updates InRelease
+4.524 Ign http://security.debian.org jessie/updates Release
+4.774 Ign http://deb.debian.org jessie Release.gpg
+4.822 Err http://security.debian.org jessie/updates/main armhf Packages
+4.822
+4.837 Ign http://deb.debian.org jessie-updates Release.gpg
+5.134 Err http://security.debian.org jessie/updates/main armhf Packages
+5.134
+5.158 Ign http://deb.debian.org jessie Release
+5.217 Ign http://deb.debian.org jessie-updates Release
+5.446 Err http://security.debian.org jessie/updates/main armhf Packages
+5.446
+5.755 Err http://security.debian.org jessie/updates/main armhf Packages
+5.755
+6.112 Err http://security.debian.org jessie/updates/main armhf Packages
+6.112   404  Not Found [IP: 151.101.66.132 80]
+9.395 Err http://deb.debian.org jessie/main armhf Packages
+9.395   404  Not Found
+9.968 Err http://deb.debian.org jessie-updates/main armhf Packages
+9.968   404  Not Found
+9.997 W: Failed to fetch http://security.debian.org/debian-security/dists/jessie/updates/main/binary-armhf/Packages  404  Not Found [IP: 151.101.66.132 80]
+9.997
+9.998 W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-armhf/Packages  404  Not Found
+9.998
+9.998 W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-armhf/Packages  404  Not Found
+9.998
+9.998 E: Some index files failed to download. They have been ignored, or old ones used instead.
+```
+test-all-install-full:debian9
+```
+ > [2/6] RUN apt-get update:
+0.183 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+0.231 Ign:2 http://security.debian.org/debian-security stretch/updates Release
+0.279 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+0.329 Ign:4 http://security.debian.org/debian-security stretch/updates/main arm64 Packages
+0.378 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+0.428 Ign:4 http://security.debian.org/debian-security stretch/updates/main arm64 Packages
+0.437 Ign:5 http://deb.debian.org/debian stretch InRelease
+0.480 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+0.488 Ign:6 http://deb.debian.org/debian stretch-updates InRelease
+0.534 Ign:4 http://security.debian.org/debian-security stretch/updates/main arm64 Packages
+0.536 Ign:7 http://deb.debian.org/debian stretch Release
+0.600 Ign:8 http://deb.debian.org/debian stretch-updates Release
+0.600 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+0.668 Ign:4 http://security.debian.org/debian-security stretch/updates/main arm64 Packages
+0.909 Ign:9 http://deb.debian.org/debian stretch/main arm64 Packages
+0.969 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+0.978 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+1.028 Ign:4 http://security.debian.org/debian-security stretch/updates/main arm64 Packages
+1.273 Ign:11 http://deb.debian.org/debian stretch-updates/main arm64 Packages
+1.321 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+1.340 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+1.398 Err:4 http://security.debian.org/debian-security stretch/updates/main arm64 Packages
+1.398   404  Not Found [IP: 151.101.66.132 80]
+1.895 Ign:9 http://deb.debian.org/debian stretch/main arm64 Packages
+2.148 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+2.724 Ign:11 http://deb.debian.org/debian stretch-updates/main arm64 Packages
+2.772 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+3.329 Ign:9 http://deb.debian.org/debian stretch/main arm64 Packages
+3.385 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+4.013 Ign:11 http://deb.debian.org/debian stretch-updates/main arm64 Packages
+4.061 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+4.429 Ign:9 http://deb.debian.org/debian stretch/main arm64 Packages
+4.481 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+4.797 Ign:11 http://deb.debian.org/debian stretch-updates/main arm64 Packages
+4.851 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+5.155 Ign:9 http://deb.debian.org/debian stretch/main arm64 Packages
+5.206 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+5.517 Ign:11 http://deb.debian.org/debian stretch-updates/main arm64 Packages
+5.635 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+5.943 Err:9 http://deb.debian.org/debian stretch/main arm64 Packages
+5.943   404  Not Found
+5.996 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+6.320 Err:11 http://deb.debian.org/debian stretch-updates/main arm64 Packages
+6.320   404  Not Found
+6.383 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+6.395 Reading package lists...
+6.407 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+6.407 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+6.407 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+6.407 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-arm64/Packages  404  Not Found [IP: 151.101.66.132 80]
+6.407 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-arm64/Packages  404  Not Found
+6.407 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-arm64/Packages  404  Not Found
+6.407 E: Some index files failed to download. They have been ignored, or old ones used instead.
+```
+test-all-install-full:debian10
+```
+53.64               ********************************************************************************
+53.64               Requirements should be satisfied by a PEP 517 installer.
+53.64               If you are using pip, you can try `pip install --use-pep517`.
+53.64               ********************************************************************************
+```
+test-all-install-full:debian11
+```
+pass
+```
+test-all-install-full:debian12
+```
+27.20 Setting up ninja-build (1.11.1-1) ...
+27.34 error: externally-managed-environment
+27.34
+27.34 × This environment is externally managed
+27.34 ╰─> To install Python packages system-wide, try apt install
+27.34     python3-xyz, where xyz is the package you are trying to
+27.34     install.
+27.34
+27.34     If you wish to install a non-Debian-packaged Python package,
+27.34     create a virtual environment using python3 -m venv path/to/venv.
+27.34     Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+27.34     sure you have python3-full installed.
+27.34
+27.34     If you wish to install a non-Debian packaged Python application,
+27.34     it may be easiest to use pipx install xyz, which will manage a
+27.34     virtual environment for you. Make sure you have pipx installed.
+27.34
+27.34     See /usr/share/doc/python3.11/README.venv for more information.
+27.34
+27.34 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+27.34 hint: See PEP 668 for the detailed specification.
 ```
 
-toninstaller:ubuntu20.04
-```
-162.4 CMake Error at /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake:146 (message):
-162.4   Could NOT find Secp256k1 (missing: SECP256K1_INCLUDE_DIR SECP256K1_LIBRARY)
-162.4 Call Stack (most recent call first):
-162.4   /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake:393 (_FPHSA_FAILURE_MESSAGE)
-162.4   CMake/FindSecp256k1.cmake:28 (find_package_handle_standard_args)
-162.4   crypto/CMakeLists.txt:322 (find_package)
-162.4
-162.4
-162.4 -- Configuring incomplete, errors occurred!
-162.4 See also "/usr/bin/ton/CMakeFiles/CMakeOutput.log".
-162.4 See also "/usr/bin/ton/CMakeFiles/CMakeError.log".
-```
-
-toninstaller:ubuntu22.04
-```
-228.6 CMake Error at /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
-228.6   Could NOT find Secp256k1 (missing: SECP256K1_INCLUDE_DIR SECP256K1_LIBRARY)
-228.6 Call Stack (most recent call first):
-228.6   /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:594 (_FPHSA_FAILURE_MESSAGE)
-228.6   CMake/FindSecp256k1.cmake:28 (find_package_handle_standard_args)
-228.6   crypto/CMakeLists.txt:322 (find_package)
-228.6
-228.6
-228.6 -- Configuring incomplete, errors occurred!
-228.6 See also "/usr/bin/ton/CMakeFiles/CMakeOutput.log".
-228.6 See also "/usr/bin/ton/CMakeFiles/CMakeError.log".
-```
