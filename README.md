@@ -6,7 +6,7 @@ Test installation in different environments, including centos, debian, ubuntu...
 | ubuntu:16.04           |    x    |
 | ubuntu:18.04           |    x    |
 | ubuntu:20.04           |    x    |
-| ubuntu:22.04           |   ✅    |
+| ubuntu:22.04           |    x    |
 | debian:8               |    x    |
 | debian:9               |    x    |
 | debian:10              |    x    |
@@ -193,4 +193,19 @@ toninstaller:ubuntu20.04
 162.4 -- Configuring incomplete, errors occurred!
 162.4 See also "/usr/bin/ton/CMakeFiles/CMakeOutput.log".
 162.4 See also "/usr/bin/ton/CMakeFiles/CMakeError.log".
+```
+
+toninstaller:ubuntu22.04
+```
+228.6 CMake Error at /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
+228.6   Could NOT find Secp256k1 (missing: SECP256K1_INCLUDE_DIR SECP256K1_LIBRARY)
+228.6 Call Stack (most recent call first):
+228.6   /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:594 (_FPHSA_FAILURE_MESSAGE)
+228.6   CMake/FindSecp256k1.cmake:28 (find_package_handle_standard_args)
+228.6   crypto/CMakeLists.txt:322 (find_package)
+228.6
+228.6
+228.6 -- Configuring incomplete, errors occurred!
+228.6 See also "/usr/bin/ton/CMakeFiles/CMakeOutput.log".
+228.6 See also "/usr/bin/ton/CMakeFiles/CMakeError.log".
 ```
