@@ -49,10 +49,10 @@ sudo docker build -t test-mytonctrl-install-full:debian10 -f build-debian:10.Doc
 sudo docker build -t test-mytonctrl-install-full:debian11 -f build-debian:11.Dockerfile  . 
 sudo docker build -t test-mytonctrl-install-full:debian12 -f build-debian:12.Dockerfile  . 
 
-sudo docker build -t test-mytonctrl-install-full:archlinuxbase -f build-archlinux:base.Dockerfile  . 
+# sudo docker build -t test-mytonctrl-install-full:archlinuxbase -f build-archlinux:base.Dockerfile  . 
 
 sudo docker build -t test-mytonctrl-install-full:centos7.9.2009 -f build-centos:centos7.9.2009.Dockerfile  . 
-sudo docker build -t test-mytonctrl-install-full:centos8.4.2105 -f build-centos:centos8.4.2105.Dockerfile  . 
+# sudo docker build -t test-mytonctrl-install-full:centos8.4.2105 -f build-centos:centos8.4.2105.Dockerfile  . 
 ```
 
 ## test-all-install-full
